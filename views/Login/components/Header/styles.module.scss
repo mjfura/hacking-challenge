@@ -1,0 +1,14 @@
+@use "@/styles/_colors" as *;
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__title{
+        color: $primary ;
+    }
+    &__link{
+        color: $link;
+        display: flex;
+        align-items: center;
+    }
+}

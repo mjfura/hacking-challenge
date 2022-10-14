@@ -16,6 +16,7 @@ specifiers:
   next: 12.3.1
   react: 18.2.0
   react-dom: 18.2.0
+  react-icons: ^4.6.0
   sass: ^1.55.0
   typescript: 4.8.4
 
@@ -23,6 +24,7 @@ dependencies:
   next: 12.3.1_2mygebwfgdyopr3fy2qddu2eli
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-icons: 4.6.0_react@18.2.0
 
 devDependencies:
   '@types/node': 18.8.5
@@ -1834,6 +1836,14 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-icons/4.6.0_react@18.2.0:
+    resolution: {integrity: sha512-rR/L9m9340yO8yv1QT1QurxWQvWpbNHqVX0fzMln2HEb9TEIrQRGsqiNFQfiv9/JEUbyHmHPlNTB2LWm2Ttz0g==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:

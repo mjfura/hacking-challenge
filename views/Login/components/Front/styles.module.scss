@@ -1,0 +1,17 @@
+@use "@/styles/_colors" as *;
+.front{
+    &__text{
+        color: $secondary
+    };
+    &__title{
+        &_color_primary{
+            color:$primary
+        };
+        &_color_secondary{
+            color:$secondary
+        }
+    };
+    &__paragraph{
+        color: $secondary;
+    }
+}
