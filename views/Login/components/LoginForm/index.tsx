@@ -2,6 +2,7 @@ import { SubmitHandler, useAppForm } from '@/hooks'
 import { handleError } from '@/utils'
 import { useRouter } from 'next/router'
 import { useId } from 'react'
+import { createUserAdapter } from '../../adapters'
 import { login } from '../../services'
 import { ILoginForm } from '../../types/forms'
 import { loginResolver } from '../../validators'
@@ -14,7 +15,8 @@ export default function LoginForm () {
   const onSubmit:SubmitHandler<ILoginForm> = async (form) => {
     try {
       const response = await login(form)
-      console.log('response', response)
+      const user = createUserAdapter(response)
+      console.log('response', user)
       push('/arma-tu-plan')
     } catch (e) {
       const error = e as Error
