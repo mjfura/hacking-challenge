@@ -1,8 +1,9 @@
-import { object, string } from 'yup'
+import { boolean, object, string } from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 export const loginSchema = object({
   dni: string().required('Campo requerido'),
   phone: string().required('Campo requerido'),
-  placa: string().required('Campo requerido')
+  placa: string().required('Campo requerido'),
+  terms: boolean().isTrue('Debe aceptar los términos y condiciones para continuar!').required('Campo requerido')
 })
 export const loginResolver = yupResolver(loginSchema)
