@@ -1,5 +1,6 @@
 import { useAppSelector } from '@/hooks'
 import { selectUser } from '@/stateManagement/redux/slices'
+import PlanForm from './components/PlanForm'
 
 export default function ArmaTuPlan () {
   const { modelo, placa, year, marca } = useAppSelector(selectUser)
@@ -12,7 +13,7 @@ export default function ArmaTuPlan () {
             <p>{marca}</p>
             <p>{modelo}</p>
             <p>{year}</p>
-            <p>Indica la suma asegurada</p>
+            <PlanForm/>
         </section>
   )
 }
