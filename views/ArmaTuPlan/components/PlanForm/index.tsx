@@ -1,15 +1,26 @@
-import { useAppForm } from '@/hooks'
-import { IPlanForm } from '../../types/forms'
-import { planResolver } from '../../validators'
+
+import Coberturas from '../Coberturas'
 import SumaAsegurada from '../SumaAsegurada'
 
 export default function PlanForm () {
-  const { register, formState: { errors }, setValue, watch } = useAppForm<IPlanForm>({
-    resolver: planResolver
-  })
+  /* const handleChangeLlanta: ChangeEventHandler<HTMLInputElement> = (e) => {
+        console.log('event', e.target.checked)
+        if (e.target.checked) {
+            return dispatch(enableLlantaRobada())
+        }
+        return dispatch(disableLLantaRobada())
+    }
+    const handleChoqueLuzRoja: ChangeEventHandler<HTMLInputElement> = (e) => {
+        console.log('event', e.target.checked)
+        if (e.target.checked) {
+            return dispatch(enableChoqueLuzRoja())
+        }
+        return dispatch(disableChoqueLuzRoja())
+    } */
   return (
         <form >
-            <SumaAsegurada watch={watch} setValue={setValue} errors={errors} register={register} />
+            <SumaAsegurada />
+            <Coberturas/>
         </form>
   )
 }

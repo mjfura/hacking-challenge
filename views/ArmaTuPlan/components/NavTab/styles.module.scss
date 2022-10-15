@@ -1,0 +1,25 @@
+@use "@/styles/_colors" as *;
+.nav{
+    display: flex;
+    &__tab{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        border-bottom: solid $border;
+        &--selected{
+            border-bottom: solid $primary;
+        }
+    }
+    &__label{
+        text-transform: uppercase;
+        text-align: center;
+        color:$secondary;
+        opacity: 0.5;
+        font-weight: 500;
+        font-size: 0.8rem;
+        &--selected{
+            color: $primary;
+            opacity: 1;
+        }
+    }
+}

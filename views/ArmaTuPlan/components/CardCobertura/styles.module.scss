@@ -1,0 +1,27 @@
+@use "@/styles/_colors" as *;
+.card{
+    border-bottom: 1px solid $border;
+    display: flex;
+    &__content{
+        display: flex;
+        flex-direction: column;
+        &--x{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &__label{
+        font-size: 1rem;
+    }
+    &__description{
+        font-size: 14px;
+    }
+    
+}
+.button{
+    display: flex;
+    &__text{
+        font-size: 10px;
+
+    }
+}

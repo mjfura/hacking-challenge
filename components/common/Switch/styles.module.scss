@@ -1,0 +1,13 @@
+@use "@/styles/_colors" as *;
+.button{
+    background-color: $success;
+    border-radius: 18px;
+    width: 51px;
+    height: 31px;
+    &__circle{
+        display: block;
+        width: 28px;
+        height: 28px;
+        background-color: $background-primary;
+    }
+}

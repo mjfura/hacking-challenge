@@ -1,19 +1,16 @@
-import { useAppSelector } from '@/hooks'
-import { selectUser } from '@/stateManagement/redux/slices'
+import Layout from '@/components/layouts'
+import Banner from './components/Banner'
 import PlanForm from './components/PlanForm'
+import Stepper from './components/Stepper'
 
 export default function ArmaTuPlan () {
-  const { modelo, placa, year, marca } = useAppSelector(selectUser)
   return (
+    <Layout>
         <section>
-            <h1>Mira las coberturas</h1>
-            <h3>Conoce las coberturas para tu plan</h3>
-            <p>{placa}</p>
-
-            <p>{marca}</p>
-            <p>{modelo}</p>
-            <p>{year}</p>
-            <PlanForm/>
+          <Stepper/>
+          <Banner/>
+          <PlanForm/>
         </section>
+    </Layout>
   )
 }

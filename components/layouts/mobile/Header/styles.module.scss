@@ -1,0 +1,30 @@
+@use "@/styles/_colors" as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom-width: 0.1rem;
+    border-style: solid;
+    border-color:$border;
+    &__title {
+        color: $primary ;
+        font-style: italic;
+        letter-spacing: 0.1rem;
+    }
+    &__link {
+        color: $link;
+        display: flex;
+        align-items: center;
+        gap:0.5rem;
+    }
+    &__icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__text{
+        font-weight: 400
+    }
+}

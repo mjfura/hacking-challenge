@@ -1,0 +1,31 @@
+@use "@/styles/_colors" as *;
+.stepper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    gap:1rem;
+    &__icon{
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+        cursor: pointer;
+        align-items: center;
+        color: $border;
+    }
+    &__text{
+        text-transform: uppercase;
+        color:$secondary;
+        font-size: 0.7rem;
+        opacity: 0.6;
+        font-weight: 700;
+    }
+    &__indicator{
+        display: block;
+        width: 100%;
+        max-width: 12rem;
+        height: 0.5rem;
+        background-color: $link;
+        border-radius: 1rem;
+    }
+}
