@@ -1,4 +1,5 @@
-import { SubmitHandler, useAppForm } from '@/hooks'
+import { SubmitHandler, useAppDispatch, useAppForm, useBoolean } from '@/hooks'
+import { createUser } from '@/stateManagement/redux/slices'
 import { handleError } from '@/utils'
 import { useRouter } from 'next/router'
 import { useId } from 'react'
@@ -12,18 +13,33 @@ export default function LoginForm () {
     resolver: loginResolver
   })
   const { push } = useRouter()
+  const dispatch = useAppDispatch()
+  const id = useId()
+  const { value: loading, toggle } = useBoolean(false)
   const onSubmit:SubmitHandler<ILoginForm> = async (form) => {
     try {
+      toggle()
       const response = await login(form)
       const user = createUserAdapter(response)
-      console.log('response', user)
+      dispatch(createUser({
+        _id: user._id,
+        dni: form.dni,
+        marca: 'Wolkswagen',
+        modelo: 'Golf',
+        monto: 0,
+        nombre: user.name,
+        phone: form.phone,
+        placa: form.placa,
+        year: 2019
+      }))
       push('/arma-tu-plan')
     } catch (e) {
       const error = e as Error
       handleError(error.message)
+    } finally {
+      toggle()
     }
   }
-  const id = useId()
   return (
         <form onSubmit={handleSubmit(onSubmit)} >
             <input {...register('dni')} type="number" />
@@ -37,7 +53,11 @@ export default function LoginForm () {
             <label htmlFor={id + '-terms'}>Acepto la Política de Protección de Datos y los Términos y Condiciones</label>
             </div>
           {errors.terms ? <p>{errors.terms.message}</p> : <></>}
-            <button type='submit' >Cotízalo</button>
+          {
+            loading
+              ? <p>Loading...</p>
+              : <button type='submit' >Cotízalo</button>
+          }
         </form>
   )
 }
