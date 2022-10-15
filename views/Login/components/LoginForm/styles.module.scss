@@ -1,0 +1,19 @@
+@use "@/styles/_colors" as *;
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem 0;
+    gap: 0.5rem;
+    &__link{
+        font-weight: 400;
+        text-decoration: underline;
+        
+    }
+    &__terms{
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        color: $secondary;
+    }
+}

@@ -1,0 +1,15 @@
+@use "@/styles/_colors" as *;
+.button{
+    background-color: $primary;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 0;
+    padding: 20px 0;
+    &__label{
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 16px;
+        color:$background-primary;
+        letter-spacing: 0.8px;
+    }
+}

@@ -1,0 +1,19 @@
+@use "@/styles/_colors" as *;
+.terms{
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    &__input{
+        position: fixed;
+        left: -2rem;
+    }
+    &__custom{
+        border-radius: 4px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $inputBorder;
+        &--checked{
+            background-color: $success;
+        }
+    }
+}

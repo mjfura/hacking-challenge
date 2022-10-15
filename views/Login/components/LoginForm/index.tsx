@@ -1,20 +1,22 @@
-import { SubmitHandler, useAppDispatch, useAppForm, useBoolean } from '@/hooks'
+import PrimaryButton from '@/components/common/Button'
+import CheckBox from '@/components/common/CheckBox'
+import DocInput from '@/components/common/DocInput'
+import Input from '@/components/common/Input'
+import { Controller, SubmitHandler, useAppDispatch, useAppForm, useBoolean } from '@/hooks'
 import { createUser } from '@/stateManagement/redux/slices'
 import { handleError } from '@/utils'
 import { useRouter } from 'next/router'
-import { useId } from 'react'
 import { createUserAdapter } from '../../adapters'
 import { login } from '../../services'
 import { ILoginForm } from '../../types/forms'
 import { loginResolver } from '../../validators'
-
+import styles from './styles.module.scss'
 export default function LoginForm () {
-  const { register, formState: { errors }, handleSubmit } = useAppForm<ILoginForm>({
+  const { formState: { errors }, handleSubmit, control } = useAppForm<ILoginForm>({
     resolver: loginResolver
   })
   const { push } = useRouter()
   const dispatch = useAppDispatch()
-  const id = useId()
   const { value: loading, toggle } = useBoolean(false)
   const onSubmit:SubmitHandler<ILoginForm> = async (form) => {
     try {
@@ -41,22 +43,32 @@ export default function LoginForm () {
     }
   }
   return (
-        <form onSubmit={handleSubmit(onSubmit)} >
-            <input {...register('dni')} type="number" />
+        <form className={styles.form} onSubmit={handleSubmit(onSubmit)} >
+          <Controller control={control} name="dni" render={({ field }) => (
+            <DocInput {...field} type="number"/>
+          )} />
             {errors.dni ? <p>{errors.dni.message}</p> : <></> }
-            <input {...register('phone')} type="number" />
+            <Controller control={control} name="phone" render={({ field }) => (
+              <Input {...field} placeholder='Celular' type="number"/>
+            )} />
           {errors.phone ? <p>{errors.phone.message}</p> : <></>}
-            <input {...register('placa')} type="text" />
+          <Controller name='placa' control={control} render={({ field }) => (
+            <Input {...field} placeholder='Placa' type="text" />
+          )} />
           {errors.placa ? <p>{errors.placa.message}</p> : <></>}
-            <div>
-            <input id={id + '-terms'} {...register('terms')} type="checkbox" />
-            <label htmlFor={id + '-terms'}>Acepto la Política de Protección de Datos y los Términos y Condiciones</label>
-            </div>
+          <Controller control={control} name="terms" render={({ field }) => (
+        <CheckBox {...field} label={
+          <p className={styles.form__terms} >
+            Acepto la <a className={styles.form__link} href="www.google.com">Política de Protección de Datos Personales</a> y los <a className={styles.form__link} href="www.google.com">Términos y Condiciones</a>
+          </p>
+        } />
+          )} />
+
           {errors.terms ? <p>{errors.terms.message}</p> : <></>}
           {
             loading
               ? <p>Loading...</p>
-              : <button type='submit' >Cotízalo</button>
+              : <PrimaryButton label='COTÍZALO' type='submit' />
           }
         </form>
   )

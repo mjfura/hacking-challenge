@@ -1,0 +1,24 @@
+@use "@/styles/_colors" as *;
+.input{
+    display: flex;
+    &__type{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $inputBorder;
+        border-radius: 4px;
+        background-color: transparent;
+        gap: 0.25rem;
+    }
+    &__text{
+        font-weight: 400;
+        color:$secondary;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    &__icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

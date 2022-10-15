@@ -1,0 +1,15 @@
+.section{
+display: flex;
+flex-direction: column;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    &__title{
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+        letter-spacing: -0.2px;
+    }
+}
