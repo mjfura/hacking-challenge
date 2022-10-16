@@ -1,0 +1,6 @@
+@use "@/styles/_sizes" as *;
+.section{
+    @media only screen and (min-width: $screen-md) {
+            display: none;
+    }
+}

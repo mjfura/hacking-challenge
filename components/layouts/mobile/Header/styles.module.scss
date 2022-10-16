@@ -1,5 +1,5 @@
 @use "@/styles/_colors" as *;
-
+@use "@/styles/_sizes" as *;
 .header {
     display: flex;
     justify-content: space-between;
@@ -8,10 +8,20 @@
     border-bottom-width: 0.1rem;
     border-style: solid;
     border-color:$border;
-    &__title {
-        color: $primary ;
-        font-style: italic;
-        letter-spacing: 0.1rem;
+    &__content{
+        display: flex;
+        align-items: center;
+        gap: 41px;
+    }
+    &__note{
+        display: none;
+        font-weight: 400;
+        color: $secondary;
+        font-size: 12px;
+        line-height: 20px;
+        @media only screen and (min-width: $screen-md) {
+                display: block;
+        }
     }
     &__link {
         color: $link;
@@ -25,6 +35,21 @@
         align-items: center;
     }
     &__text{
-        font-weight: 400
+        font-weight: 400;
+        @media only screen and (min-width: $screen-md) {
+                display: none;
+        }
+        &--md{
+            display: none;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            @media only screen and (min-width: $screen-md) {
+                    display: flex;
+            }
+        }
+    }
+    @media only screen and (min-width: $screen-md) {
+        justify-content: space-around;
     }
 }
