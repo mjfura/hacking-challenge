@@ -44,6 +44,7 @@ export default function LoginForm () {
   }
   return (
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)} >
+          <div className={styles.form__inputs} >
           <Controller control={control} name="dni" render={({ field }) => (
             <DocInput {...field} type="number"/>
           )} />
@@ -56,6 +57,9 @@ export default function LoginForm () {
             <Input {...field} placeholder='Placa' type="text" />
           )} />
           {errors.placa ? <p>{errors.placa.message}</p> : <></>}
+          </div>
+          <article className={styles.form__container} >
+
           <Controller control={control} name="terms" render={({ field }) => (
         <CheckBox {...field} label={
           <p className={styles.form__terms} >
@@ -65,6 +69,7 @@ export default function LoginForm () {
           )} />
 
           {errors.terms ? <p>{errors.terms.message}</p> : <></>}
+          </article>
           {
             loading
               ? <p>Loading...</p>
