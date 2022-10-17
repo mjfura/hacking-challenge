@@ -1,10 +1,56 @@
 @use "@/styles/_colors" as *;
+@use "@/styles/_sizes" as *;
 .stepper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 2rem;
-    gap:1rem;
+    &__list{
+        display: none;
+        flex-direction: column;
+        padding: 3.25rem 0 0 0;
+        list-style: none;
+        gap: 2.75rem;
+        @media only screen and (min-width: $screen-md) {
+            display: flex;
+        }
+    }
+    &__item{
+        display: flex;
+        gap:1rem;
+    }
+    &__label{
+        color: $placeholder;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.5rem;    
+        letter-spacing: 0.2px;
+        &--selected{
+            color: $secondary;
+        }
+    }
+    &__number{
+        display: flex;
+        align-items: center;
+        color: $placeholder;
+        justify-content: center;
+        text-align: center;
+        font-size: 0.75rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        border: 1px solid $placeholder;
+        &--selected{
+            background-color: $link;
+            color: $background-primary;
+        }
+    }
+    &__mobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 2rem;
+        gap:1rem;
+        @media only screen and (min-width: $screen-md) {
+            display: none;
+        }
+    }
     &__icon{
         display: flex;
         justify-content: center;
@@ -27,5 +73,9 @@
         height: 0.5rem;
         background-color: $link;
         border-radius: 1rem;
+    }
+    @media only screen and (min-width: $screen-md) {
+        display: flex;
+        justify-content: center;
     }
 }

@@ -1,6 +1,7 @@
 import Switch from '@/components/common/Switch'
-import { useAppDispatch, useAppSelector } from '@/hooks'
+import { useAppDispatch, useAppSelector, useBoolean } from '@/hooks'
 import { disableAtropelloVia, disableChoqueLuzRoja, disableLLantaRobada, enableAtropelloVia, enableChoqueLuzRoja, enableLlantaRobada, selectPlan } from '@/stateManagement/redux/slices'
+import { multipleStyles } from '@/utils'
 import Image from 'next/image'
 import { IoIosArrowDown } from 'react-icons/io'
 import { TipoCobertura } from '../../constants'
@@ -11,9 +12,13 @@ type Props={
     img:any,
     label:string
 }
-export default function CardCobertura ({ img, name, label }:Props) {
+export default function CardCobertura ({ img, name, label, description }:Props) {
   const plan = useAppSelector(selectPlan)
+  const { value: open, toggle } = useBoolean(false)
   const dispatch = useAppDispatch()
+  const handleClick = () => {
+    toggle()
+  }
   const handleChangeEnabled = () => {
     if (name === TipoCobertura.AtropelloVia) return dispatch(enableAtropelloVia())
     if (name === TipoCobertura.ChoqueLuzRoja) return dispatch(enableChoqueLuzRoja())
@@ -34,11 +39,16 @@ export default function CardCobertura ({ img, name, label }:Props) {
                 <div className={styles['card__content--x']} >
             <h4 className={styles.card__label} >{label}</h4>
             <Switch onChangeEnabled={handleChangeEnabled} onChangeDisabled={handleChangeDisabled} value={plan[name]} />
+                <div className={open ? styles['card__description-desktop--open'] : styles['card__description-desktop']} >
+                    <p className={styles.card__text} >{description}</p>
                 </div>
-
-            <div className={styles.button} >
-                <p className={styles.button__text} >Ver más</p>
-                <span className={styles.button__icon} >
+                </div>
+            <div className={open ? styles['card__description--open'] : styles.card__description} >
+                <p className={styles.card__text} >{description}</p>
+            </div>
+            <div onClick={handleClick} className={styles.button} >
+                <p className={multipleStyles([styles.button__text, open ? styles['button__text--open'] : ' '])} >{open ? 'Ver menos' : 'Ver más'}</p>
+                <span className={multipleStyles([styles.button__icon, open ? styles['button__icon--open'] : ' '])} >
                       <IoIosArrowDown/>
                 </span>
             </div>

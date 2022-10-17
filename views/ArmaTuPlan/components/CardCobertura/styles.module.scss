@@ -5,9 +5,25 @@
     display: flex;
     gap: 14px;
     width: 100%;
+    padding: 2rem 0;
+    &__description-desktop{
+        display: none;
+        &--open{
+            display: none;
+            @media only screen and (min-width: $screen-md) {
+                    display: flex;
+            }
+        }
+    }
     &__img{
         width: 40px;
         height: 40px;
+    }
+    &__text{
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+        color:$secondary;
     }
     &__content{
         display: flex;
@@ -25,6 +41,7 @@
         }
         @media only screen and (min-width: $screen-md) {
             flex-direction: row;
+            align-items: flex-start;
         }
     }
     &__label{
@@ -37,7 +54,13 @@
         }
     }
     &__description{
-        font-size: 14px;
+       display: none;
+       &--open{
+        display: flex;
+        @media only screen and (min-width: $screen-md) {
+            display: none;
+        }
+       }
     }
     @media only screen and (min-width: $screen-md) {
         padding: 2rem 0;
@@ -45,6 +68,7 @@
 }
 .button{
     display: flex;
+    justify-content: flex-start;
     gap:11px;
     cursor: pointer;
     &__text{
@@ -54,6 +78,9 @@
         letter-spacing: 0.8px;
         text-transform: uppercase;
         color:$link;
+        &--open{
+            color:$placeholder;
+        }
         @media only screen and (min-width: $screen-md) {
             display: none;
         }
@@ -61,8 +88,15 @@
     &__icon{
         font-size: 1rem;
         color: $link;
+        transition: all 0.5s ease-in-out;
+        &--open{
+            color:$placeholder;
+            transform: rotate(180deg);
+        }
         @media only screen and (min-width: $screen-md) {
             color:$primary;
+            display: flex;
+            justify-content: flex-start;
         }
     }
 }
