@@ -3,6 +3,7 @@ import CheckBox from '@/components/common/CheckBox'
 import DocInput from '@/components/common/DocInput'
 import Input from '@/components/common/Input'
 import { Controller, SubmitHandler, useAppDispatch, useAppForm, useBoolean } from '@/hooks'
+import { PrivateRoutes } from '@/routes'
 import { createUser } from '@/stateManagement/redux/slices'
 import { handleError } from '@/utils'
 import { useRouter } from 'next/router'
@@ -34,7 +35,7 @@ export default function LoginForm () {
         placa: form.placa,
         year: 2019
       }))
-      push('/arma-tu-plan')
+      push(PrivateRoutes.ArmaTuPlan)
     } catch (e) {
       const error = e as Error
       handleError(error.message)
@@ -63,7 +64,7 @@ export default function LoginForm () {
           <Controller control={control} name="terms" render={({ field }) => (
         <CheckBox {...field} label={
           <p className={styles.form__terms} >
-            Acepto la <a className={styles.form__link} href="www.google.com">Política de Protección de Datos Personales</a> y los <a className={styles.form__link} href="www.google.com">Términos y Condiciones</a>
+            Acepto la <a className={styles.form__link} href="www.google.com.pe">Política de Protección de Datos Personales</a> y los <a className={styles.form__link} href="www.google.com">Términos y Condiciones</a>
           </p>
         } />
           )} />

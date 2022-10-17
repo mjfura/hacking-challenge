@@ -24,29 +24,37 @@ export const planSlice = createSlice({
       }
     },
     enableLlantaRobada: (state) => {
-      state.llantaRobada = true
-      state.montoFinal += 15
+      if (!state.llantaRobada) {
+        state.llantaRobada = true
+        state.montoFinal += 15
+      }
     },
     disableLLantaRobada: (state) => {
-      state.llantaRobada = false
-      state.montoFinal -= 15
+      if (state.llantaRobada) {
+        state.llantaRobada = false
+        state.montoFinal -= 15
+      }
     },
     enableAtropelloVia: (state) => {
-      state.atropelloVia = true
-      state.montoFinal += 50
+      if (!state.atropelloVia) {
+        state.atropelloVia = true
+        state.montoFinal += 50
+      }
     },
     disableAtropelloVia: (state) => {
-      state.atropelloVia = false
-      state.montoFinal -= 50
+      if (state.atropelloVia) {
+        state.atropelloVia = false
+        state.montoFinal -= 50
+      }
     },
     enableChoqueLuzRoja: (state) => {
-      if (!state.choqueLuzRoja) {
+      if (!state.choqueLuzRoja && state.montoAsegurado <= 16000) {
         state.choqueLuzRoja = true
         state.montoFinal += 20
       }
     },
     disableChoqueLuzRoja: (state) => {
-      if (state.choqueLuzRoja) {
+      if (state.choqueLuzRoja && state.montoAsegurado >= 16000) {
         state.choqueLuzRoja = false
         state.montoFinal -= 20
       }

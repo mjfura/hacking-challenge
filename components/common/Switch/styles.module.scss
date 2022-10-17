@@ -1,13 +1,30 @@
 @use "@/styles/_colors" as *;
-.button{
+.switch{
+   display: flex;
+   width: 51px;
+   height: 31px;
+   background-color: $border;
+   border-color: transparent;
+   border-width: 0;
+   cursor: pointer;
+   position: relative;
+   border-radius: 18px;
+   transition: all 0.3s ease-in-out;
+   &--enabled{
     background-color: $success;
-    border-radius: 18px;
-    width: 51px;
-    height: 31px;
-    &__circle{
-        display: block;
-        width: 28px;
-        height: 28px;
-        background-color: $background-primary;
+   }
+   &__circle{
+    display: flex;
+    position: absolute;
+    top: 1.5px;
+    left: 1.5px;
+    background-color: $background-secondary;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    &--enabled{
+        transform:translateX(20px);
     }
+   }
 }
