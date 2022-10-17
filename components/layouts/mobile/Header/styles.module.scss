@@ -1,5 +1,6 @@
 @use "@/styles/_colors" as *;
-@use "@/styles/_sizes" as *;
+@use "@/styles/_mediaqueries" as *;
+@use "@/styles/_resources" as *;
 .header {
     display: flex;
     justify-content: space-between;
@@ -11,15 +12,15 @@
     &__content{
         display: flex;
         align-items: center;
-        gap: 41px;
+        gap: pxRem(41px);
     }
     &__note{
         display: none;
         font-weight: 400;
         color: $secondary;
-        font-size: 12px;
-        line-height: 20px;
-        @media only screen and (min-width: $screen-md) {
+        font-size: pxRem(12px);
+        line-height: pxRem(20px);
+        @include desktop {
                 display: block;
         }
     }
@@ -30,26 +31,24 @@
         gap:0.5rem;
     }
     &__icon{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include center;
     }
     &__text{
         font-weight: 400;
-        @media only screen and (min-width: $screen-md) {
+        @include desktop{
                 display: none;
         }
         &--md{
             display: none;
             font-weight: 400;
-            font-size: 14px;
-            line-height: 24px;
-            @media only screen and (min-width: $screen-md) {
+            font-size: pxRem(14px);
+            line-height: pxRem(24px);
+            @include desktop {
                     display: flex;
             }
         }
     }
-    @media only screen and (min-width: $screen-md) {
+    @include desktop {
         justify-content: space-around;
     }
 }

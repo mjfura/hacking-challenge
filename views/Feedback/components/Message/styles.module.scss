@@ -1,12 +1,13 @@
 @use "@/styles/_colors" as *;
-@use "@/styles/_sizes" as *;
+@use "@/styles/_mediaqueries" as *;
+@use "@/styles/_resources" as *;
 .message{
     padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
     &__button{
         display: flex;
-        @media only screen and (min-width: $screen-md) {
+        @include desktop {
                 max-width: 16rem;
         }
     }
@@ -23,18 +24,14 @@
         }
     }
     &__title{
-        color:$secondary;
-        font-weight: 400;
-        font-size: 1.75rem;
-        line-height: 2rem;
-        letter-spacing: -0.6px;
+        @include font(1.75rem,400,2rem,pxRem(-0.6px),$secondary);
         &--primary{
             color:$primary;
         }
-        @media only screen and (min-width: $screen-md) {
+        @include desktop{
          font-size: 2.25rem;
         line-height: 3rem;    
-        letter-spacing: -0.2px;
+        letter-spacing:pxRem(-0.2px);
         }
     }
     &__article{
@@ -42,8 +39,8 @@
         flex-direction: column;
         margin-bottom: 1.5rem;
     }
-    @media only screen and (min-width: $screen-md) {
-        max-width: 480px;
+    @include desktop {
+        max-width: pxRem(480px);
         margin-left: 8rem;
     }
 }

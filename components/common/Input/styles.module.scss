@@ -1,11 +1,11 @@
 @use "@/styles/_colors" as *;
-@use "@/styles/_sizes" as *;
+@use "@/styles/_resources" as *;
 .input{
     padding:1rem;
     outline: 0;
     flex: 1;
-    border: 1px solid $inputBorder;
-    border-radius: 4px;
+    border: pxRem(1px) solid $inputBorder;
+    border-radius: pxRem(4px);
     font-weight: 400;
     font-size: 1rem;
     line-height: 24px;

@@ -1,15 +1,16 @@
 @use "@/styles/_colors" as *;
-@use "@/styles/_sizes" as *;
+@use "@/styles/_mediaqueries" as *;
+@use "@/styles/_resources" as *;
 .switch{
    display: flex;
-   width: 51px;
-   height: 31px;
+   width: pxRem(51px);
+   height: pxRem(31px);
    background-color: $border;
    border-color: transparent;
    border-width: 0;
    cursor: pointer;
    position: relative;
-   border-radius: 18px;
+   border-radius: pxRem(18px);
    transition: all 0.3s ease-in-out;
    &--enabled{
     background-color: $success;
@@ -19,32 +20,25 @@
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 50%;
-    border:1px solid $link;
-    @media only screen and (min-width: $screen-md) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    border:pxRem(1px) solid $link;
+    @include desktop {
+        @include center;
         color: $link;
     }
    }
    &__sign{
     display: none;
     font-size: 1rem;
-    @media only screen and (min-width: $screen-md) {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    @include desktop{
+            @include center;
             color: $link;
     }
    }
    &__label{
     display: none;
-    font-weight: 700;
-    font-size: 0.75rem;
-    line-height: 1rem;
-    letter-spacing: 0.6px;
+    @include font(0.75rem,700,1rem,pxRem(0.6px),$secondary);
     text-transform: uppercase;
-    @media only screen and (min-width: $screen-md) {
+    @include desktop{
         display: initial;
         color: $link;
     }
@@ -52,21 +46,21 @@
    &__circle{
     display: flex;
     position: absolute;
-    top: 1.5px;
-    left: 1.5px;
+    top: pxRem(1.5px);
+    left:pxRem(1.5px);
     background-color: $background-secondary;
-    width: 28px;
-    height: 28px;
+    width: pxRem(28px);
+    height: pxRem(28px);
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
     &--enabled{
-        transform:translateX(20px);
+        transform:translateX(pxRem(20px));
     }
-    @media only screen and (min-width: $screen-md) {
+    @include desktop {
             display: none;
     }
    }
-   @media only screen and (min-width: $screen-md) {
+   @include desktop {
        background-color: transparent;
        width: auto;
        padding: 0;

@@ -55,7 +55,7 @@ export const planSlice = createSlice({
       }
     },
     disableChoqueLuzRoja: (state) => {
-      if (state.choqueLuzRoja && state.montoAsegurado >= 16000) {
+      if (state.choqueLuzRoja && state.montoAsegurado > 16000) {
         state.choqueLuzRoja = false
         state.montoFinal -= 20
       }

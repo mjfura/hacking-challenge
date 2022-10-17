@@ -1,4 +1,5 @@
 @use "@/styles/_colors" as *;
+@use "@/styles/_resources" as *;
 .input{
     display: flex;
     flex: 1;
@@ -7,28 +8,24 @@
         display: flex;
     }
     &__type{
-        display: flex;
-        justify-content: center;
+        @include center;
         outline: 0;
         cursor: pointer;
-        align-items: center;
         padding: 1rem;
-        border: 1px solid $inputBorder;
+        border: pxRem(1px) solid $inputBorder;
         border-right-width: 0;
-        border-radius: 4px;
+        border-radius: pxRem(4px);
         background-color: transparent;
         gap: 0.8rem;
     }
     &__text{
         font-weight: 400;
         color:$secondary;
-        font-size: 16px;
-        line-height: 24px;
+        font-size: pxRem(16px);
+        line-height: pxRem(24px);
     }
     &__icon{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include center;
         color:$primary;
     }
     

@@ -1,8 +1,9 @@
 @use "@/styles/_colors" as *;
+@use "@/styles/_resources" as *;
 .terms{
     display: flex;
     align-items: flex-start;
-    gap: 12px;
+    gap: pxRem(12px);
     &__label{
         cursor: pointer;
     }
@@ -11,10 +12,10 @@
         left: -2rem;
     }
     &__custom{
-        border-radius: 4px;
-        width: 20px;
-        height: 20px;
-        border: 1px solid $inputBorder;
+        border-radius: pxRem(4px);
+        width: pxRem(20px);
+        height: pxRem(20px);
+        border: pxRem(1px) solid $inputBorder;
         &--checked{
             background-color: $success;
         }

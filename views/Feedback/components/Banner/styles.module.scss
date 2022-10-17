@@ -1,14 +1,14 @@
-@use "@/styles/_sizes" as *;
+@use "@/styles/_mediaqueries" as *;
 .banner{
     &__img{
         
         &--desktop{
             display: none;
-            @media only screen and (min-width: $screen-md) {
+            @include desktop {
                 display: initial;
             }
         }
-        @media only screen and (min-width: $screen-md) {
+        @include desktop{
             display: none;
         }
     }

@@ -1,21 +1,18 @@
 @use "@/styles/_colors" as *;
-@use "@/styles/_sizes" as *;
+@use "@/styles/_mediaqueries" as *;
+@use "@/styles/_resources" as *;
 .button{
     background-color: $primary;
-    border-radius: 8px;
+    border-radius: pxRem(8px);
     cursor: pointer;
     border: 0;
-    padding: 20px 0;
+    padding: pxRem(20px) 0;
     width: 100%;
-    @media only screen and (min-width: $screen-md) {
+    @include desktop {
             padding: 1.25rem 2rem;
     }
     &__label{
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 16px;
+        @include font(pxRem(14px),700,pxRem(16px),pxRem(0.8px),$background-primary);
         text-transform: uppercase;
-        color:$background-primary;
-        letter-spacing: 0.8px;
     }
 }

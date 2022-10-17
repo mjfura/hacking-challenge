@@ -1,19 +1,16 @@
 @use "@/styles/_colors" as *;
-@use "@/styles/_sizes" as *;
+@use "@/styles/_mediaqueries" as *;
+@use "@/styles/_resources" as *;
 .footer{
     padding-left: 2rem;
-    border-top: 1px solid $border;
+    border-top: pxRem(1px) solid $border;
     &__text{
-        font-weight: 300;
-        font-size: 0.75rem;
-        line-height: 1.25rem;
-        letter-spacing: 0.2px;
-        color:$placeholder;
+        @include font(0.75rem,300,1.25rem,pxRem(0.2px),$placeholder);
         display: flex;
         align-items: center;
-        height: 75px;
+        height: pxRem(75px);
     }
-    @media only screen and (min-width: $screen-md) {
+    @include desktop {
         display: none;
     }
 }
