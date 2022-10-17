@@ -1,6 +1,7 @@
 import { Plan } from '@/types/models'
 import { RootState } from '@/types/redux'
 import { createSlice } from '@reduxjs/toolkit'
+import { ReduxStates } from '../states'
 
 const initialState: Plan = {
   atropelloVia: false,
@@ -10,7 +11,7 @@ const initialState: Plan = {
   montoFinal: 20
 }
 export const planSlice = createSlice({
-  name: 'plan',
+  name: ReduxStates.Plan,
   initialState,
   reducers: {
     plus: (state) => {
