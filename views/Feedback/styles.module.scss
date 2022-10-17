@@ -1,4 +1,14 @@
+@use "@/styles/_sizes" as *;
 .section{
     display: flex;
     flex-direction: column;
+    &__banner{
+        flex: 1;
+    }
+    &__message{
+        flex: 1.25;
+    }
+    @media only screen and (min-width: $screen-md) {
+        flex-direction: row;
+    }
 }

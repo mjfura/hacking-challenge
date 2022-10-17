@@ -4,6 +4,7 @@ type Props={
     type:'button' | 'submit' | 'reset' | undefined,
     onClick?:()=>void
 }
+
 export default function PrimaryButton ({ onClick, label, type }:Props) {
   return (
         <button onClick={onClick} className={styles.button} type={type}>

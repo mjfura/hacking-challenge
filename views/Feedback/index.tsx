@@ -7,8 +7,12 @@ export default function Feedback () {
   return (
         <Layout>
             <section className={styles.section} >
+                <div className={styles.section__banner} >
                 <Banner/>
+                </div>
+                <div className={styles.section__message} >
                 <Message/>
+                </div>
                 <Footer/>
             </section>
         </Layout>

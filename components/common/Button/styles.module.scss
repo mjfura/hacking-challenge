@@ -6,8 +6,9 @@
     cursor: pointer;
     border: 0;
     padding: 20px 0;
+    width: 100%;
     @media only screen and (min-width: $screen-md) {
-
+            padding: 1.25rem 2rem;
     }
     &__label{
         font-weight: 700;

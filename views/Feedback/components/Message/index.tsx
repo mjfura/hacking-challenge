@@ -12,7 +12,9 @@ export default function Message () {
             <p className={styles.message__text} >Enviaremos la confirmación de compra de tu Plan Vehicular Tracking a tu correo:</p>
             <p className={multipleStyles([styles.message__text, styles['message__text--strong']])} >joel.sanchez@gmail.com</p>
             </article>
+            <div className={styles.message__button} >
             <PrimaryButton label='Cómo usar mi seguro' type='button' />
+            </div>
         </div>
   )
 }
