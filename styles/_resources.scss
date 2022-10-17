@@ -1,0 +1,16 @@
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin font($size,$weight,$line,$spacing,$color){
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line;
+    letter-spacing: $spacing;
+    color:$color;
+}
+
+@function pxRem($px){
+    @return ($px/16px)*1rem
+}

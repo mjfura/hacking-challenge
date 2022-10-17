@@ -1,0 +1,6 @@
+@use "./sizes" as *;
+@mixin desktop(){
+    @media only screen and (min-width: $screen-md) {
+        @content
+    }
+}

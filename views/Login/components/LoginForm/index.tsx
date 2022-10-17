@@ -1,7 +1,3 @@
-import PrimaryButton from '@/components/common/Button'
-import CheckBox from '@/components/common/CheckBox'
-import DocInput from '@/components/common/DocInput'
-import Input from '@/components/common/Input'
 import { Controller, SubmitHandler, useAppDispatch, useAppForm, useBoolean } from '@/hooks'
 import { PrivateRoutes } from '@/routes'
 import { createUser } from '@/stateManagement/redux/slices'
@@ -13,6 +9,8 @@ import { ILoginForm } from '../../types/forms'
 import { loginResolver } from '../../validators'
 import { MoonLoader } from 'react-spinners'
 import styles from './styles.module.scss'
+import { CheckBox, DocInput, Input } from '@/components/common'
+import PrimaryButton from '@/components/common/Button'
 export default function LoginForm () {
   const { formState: { errors }, handleSubmit, control } = useAppForm<ILoginForm>({
     resolver: loginResolver
@@ -77,7 +75,7 @@ export default function LoginForm () {
           {
             loading
               ? <MoonLoader/>
-              : <PrimaryButton label='COTÍZALO' type='submit' />
+              : <PrimaryButton label='Cotízalo' type='submit' />
           }
           </div>
         </form>

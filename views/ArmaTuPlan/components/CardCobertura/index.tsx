@@ -7,7 +7,7 @@ import { IoIosArrowDown } from 'react-icons/io'
 import { TipoCobertura } from '../../constants'
 import styles from './styles.module.scss'
 type Props={
-    name:'atropelloVia'|'choqueLuzRoja'|'llantaRobada',
+    name:TipoCobertura,
     description:string,
     img:any,
     label:string

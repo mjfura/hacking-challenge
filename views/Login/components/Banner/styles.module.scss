@@ -1,5 +1,5 @@
 @use "@/styles/_colors" as *;
-@use "@/styles/_sizes" as *;
+@use "@/styles/_mediaqueries" as *;
 .banner{
     display: flex;
     position: relative;
@@ -13,14 +13,14 @@
        &--md{
         display: none;
        }
-        @media only screen and (min-width: $screen-md){
+        @include desktop{
             display: none;
            &--md{
             display: flex;
            }
         }
     }
-    @media only screen and (min-width: $screen-md) {
+    @include desktop {
         flex-direction: column;
         padding: 6rem 4rem 3rem 4rem;
         flex: 1;

@@ -1,10 +1,11 @@
 @use "@/styles/_colors" as *;
-@use "@/styles/_sizes" as *;
+@use "@/styles/_mediaqueries" as *;
+@use "@/styles/_resources" as *;
 .form{
     display: flex;
     flex-direction: column;
     margin: 1.5rem 0;
-    @media only screen and (min-width: $screen-md) {
+    @include desktop{
             max-width: 18rem;
     }
     &__error{
@@ -13,7 +14,7 @@
         font-weight: 300;
     }
     &__container{
-        margin: 24px 0 32px 0;
+        margin: pxRem(24px) 0 pxRem(32px) 0;
     }
     &__inputs{
         gap: 0.5rem;
@@ -26,15 +27,13 @@
         
     }
     &__terms{
-        font-weight: 300;
-        font-size: 12px;
-        line-height: 20px;
-        letter-spacing: 0.2px;
-        color: $secondary;
+        @include font(pxRem(12px),300,pxRem(20px),pxRem(0.2px),$secondary);
     }
     &__button{
         width: 100%;
-        @media only screen and (min-width: $screen-md) {
+        display: flex;
+        justify-content: center;
+        @include desktop{
             width:12rem;
         }
     }

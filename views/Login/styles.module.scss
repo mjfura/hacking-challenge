@@ -1,22 +1,19 @@
-@use "@/styles/_sizes" as *;
+@use "@/styles/_mediaqueries" as *;
+@use "@/styles/_resources" as *;
+@use "@/styles/_colors" as *;
 .section{
 display: flex;
 flex-direction: column;
-@media only screen and (min-width: $screen-md) {
-        flex-direction: row;
-    }
+@include desktop{
+    flex-direction: row;
+}
 }
 .form{
-    display: flex;
+    @include center;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     flex: 1.5;
     padding: 1rem;
     &__title{
-        font-size: 24px;
-        font-weight: 400;
-        line-height: 32px;
-        letter-spacing: -0.2px;
+        @include font(1.5rem,400,2rem,pxRem(-0.2px),$secondary)
     }
 }

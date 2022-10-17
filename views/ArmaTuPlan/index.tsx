@@ -1,13 +1,12 @@
 import Layout from '@/components/layouts'
-import { useAppSelector } from '@/hooks'
+import { useAppSelector, useAppSession } from '@/hooks'
 import { selectPlan } from '@/stateManagement/redux/slices'
-import Banner from './components/Banner'
-import Footer from './components/Footer'
-import PlanForm from './components/PlanForm'
-import Stepper from './components/Stepper'
+import { Banner, Footer, PlanForm, Stepper } from './components'
+
 import styles from './styles.module.scss'
 export default function ArmaTuPlan () {
   const { montoFinal } = useAppSelector(selectPlan)
+  useAppSession()
   return (
     <Layout>
         <section className={styles.section} >
