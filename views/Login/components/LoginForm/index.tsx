@@ -72,11 +72,14 @@ export default function LoginForm () {
 
           {errors.terms ? <p className={styles.form__error} >{errors.terms.message}</p> : <></>}
           </article>
+          <div className={styles.form__button} >
+
           {
             loading
               ? <MoonLoader/>
               : <PrimaryButton label='COTÍZALO' type='submit' />
           }
+          </div>
         </form>
   )
 }

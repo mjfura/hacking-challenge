@@ -32,4 +32,10 @@
         letter-spacing: 0.2px;
         color: $secondary;
     }
+    &__button{
+        width: 100%;
+        @media only screen and (min-width: $screen-md) {
+            width:12rem;
+        }
+    }
 }

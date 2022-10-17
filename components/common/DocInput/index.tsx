@@ -20,7 +20,9 @@ export default function DocInput (props:Props) {
                   <IoIosArrowDown />
                 </span>
             </button>
+            <div className={styles.input__dni} >
             <Input {...props} placeholder="Nro de doc" />
+            </div>
 
         </div>
   )

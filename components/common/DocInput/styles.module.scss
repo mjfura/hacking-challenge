@@ -1,7 +1,11 @@
 @use "@/styles/_colors" as *;
 .input{
     display: flex;
-    width: 100%;
+    flex: 1;
+    &__dni{
+        flex: 1;
+        display: flex;
+    }
     &__type{
         display: flex;
         justify-content: center;
