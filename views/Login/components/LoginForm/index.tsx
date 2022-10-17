@@ -24,6 +24,7 @@ export default function LoginForm () {
       const response = await login(form)
       const user = createUserAdapter(response)
       dispatch(createUser({
+        email: user.email,
         _id: user._id,
         dni: form.dni,
         marca: 'Wolkswagen',
@@ -63,7 +64,7 @@ export default function LoginForm () {
           <Controller control={control} name="terms" render={({ field }) => (
         <CheckBox {...field} label={
           <p className={styles.form__terms} >
-            Acepto la <a className={styles.form__link} href="www.google.com.pe">Política de Protección de Datos Personales</a> y los <a className={styles.form__link} href="www.google.com">Términos y Condiciones</a>
+            Acepto la <a className={styles.form__link} rel="noreferrer" target="_blank" href="https://www.google.com.pe">Política de Protección de Datos Personales</a> y los <a className={styles.form__link} href="www.google.com">Términos y Condiciones</a>
           </p>
         } />
           )} />

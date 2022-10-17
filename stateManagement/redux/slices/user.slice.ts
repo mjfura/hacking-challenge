@@ -9,6 +9,7 @@ export const initialState: UserState = {
   modelo: '',
   monto: 0,
   nombre: '',
+  email: '',
   placa: '',
   year: 0,
   dni: '',
