@@ -1,7 +1,13 @@
 import PrimaryButton from '@/components/common/Button'
-import { multipleStyles } from '@/utils'
+import { useAppSelector } from '@/hooks'
+import { selectPlan } from '@/stateManagement/redux/slices'
+import { handleSuccess, multipleStyles } from '@/utils'
 import styles from './styles.module.scss'
 export default function Message () {
+  const { montoFinal } = useAppSelector(selectPlan)
+  const handleClick = () => {
+    handleSuccess(`Tu monto final mensual es: $${montoFinal.toFixed(2)}`)
+  }
   return (
         <div className={styles.message} >
             <article className={styles.message__article} >
@@ -13,7 +19,7 @@ export default function Message () {
             <p className={multipleStyles([styles.message__text, styles['message__text--strong']])} >joel.sanchez@gmail.com</p>
             </article>
             <div className={styles.message__button} >
-            <PrimaryButton label='Cómo usar mi seguro' type='button' />
+            <PrimaryButton onClick={handleClick} label='Cómo usar mi seguro' type='button' />
             </div>
         </div>
   )
