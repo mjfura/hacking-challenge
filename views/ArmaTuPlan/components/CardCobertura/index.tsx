@@ -23,11 +23,13 @@ export default function CardCobertura ({ img, name, label, description }:Props) 
     if (name === TipoCobertura.AtropelloVia) return dispatch(enableAtropelloVia())
     if (name === TipoCobertura.ChoqueLuzRoja) return dispatch(enableChoqueLuzRoja())
     if (name === TipoCobertura.RoboLlanta) return dispatch(enableLlantaRobada())
+    return null
   }
   const handleChangeDisabled = () => {
     if (name === TipoCobertura.AtropelloVia) return dispatch(disableAtropelloVia())
     if (name === TipoCobertura.ChoqueLuzRoja) return dispatch(disableChoqueLuzRoja())
     if (name === TipoCobertura.RoboLlanta) return dispatch(disableLLantaRobada())
+    return null
   }
   return (
         <div className={styles.card} >
