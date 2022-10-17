@@ -4,6 +4,7 @@
 .section{
 display: flex;
 flex-direction: column;
+flex: 1;
 @include desktop{
     flex-direction: row;
 }

@@ -8,7 +8,7 @@ export default function LayoutMobile ({ children }:Props) {
   return (
         <section className={styles.page} >
             <Header/>
-            <main>{children}</main>
+            <main className={styles.page__main} >{children}</main>
         </section>
 
   )
