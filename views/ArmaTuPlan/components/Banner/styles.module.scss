@@ -1,5 +1,6 @@
 @use "@/styles/_colors" as *;
-@use "@/styles/_sizes" as *;
+@use "@/styles/_mediaqueries" as *;
+@use "@/styles/_resources" as *;
 .banner{
     background-color: $background-secondary;
     display: flex;
@@ -8,16 +9,12 @@
     padding: 2.5rem 1.5rem;
     gap: 1.5rem;
     &__title{
-        font-weight: 400;
+        @include font(2.5rem,400,3rem,pxRem(-0.6px),$secondary);
         display: none;
-        color:$secondary;
-        font-size: 2.5rem;
-        line-height: 3rem;
-        letter-spacing: -0.6px;
         &--primary{
             color:$primary;
         }
-        @media only screen and (min-width: $screen-md) {
+        @include desktop{
             display: initial;
         }
     }
@@ -26,7 +23,7 @@
             font-size: 1.8rem;
             font-weight: 400;
             color:$secondary;
-            @media only screen and (min-width: $screen-md) {
+            @include desktop{
                     display: none;
             }
         }
@@ -37,7 +34,7 @@
             color:$secondary;
         }
     }
-    @media only screen and (min-width: $screen-md) {
+    @include desktop{
         background-color: $background-primary;
         
     }

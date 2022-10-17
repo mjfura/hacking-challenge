@@ -1,67 +1,52 @@
 @use "@/styles/_colors" as *;
-@use "@/styles/_sizes" as *;
+@use "@/styles/_mediaqueries" as *;
+@use "@/styles/_resources" as *;
 .footer{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
     padding: 1rem 2rem;
-    border-top: 1px solid $border;
+    border-top: pxRem(1px) solid $border;
     gap: 1rem;
-    margin-top: 106px;
+    margin-top: pxRem(106px);
     &__container{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 0.25rem;
-        @media only screen and (min-width: $screen-md) {
-           border-bottom: 1px solid $border;
+        @include desktop{
+           border-bottom: pxRem(1px) solid $border;
            padding-bottom: 1.25rem;
         }
     }
     &__price{
-        font-weight: 400;
-        font-size: 1.5rem;
-        line-height: 2rem;        
-        letter-spacing: -0.2px;
-        color:$secondary;
-        @media only screen and (min-width: $screen-md) {
+        @include font(1.5rem,400,2rem,pxRem(-0.2px),$secondary);
+        @include desktop {
             font-size: 1.75rem;
         }
     }
     &__description{
-        font-weight: 700;
-        font-size: 10px;
-        line-height: 16px;        
-        letter-spacing: 0.8px;
-        color: $secondary;
-        @media only screen and (min-width: $screen-md) {
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 20px;            
-            letter-spacing: 0.2px;
-            color:$placeholder;
+        @include font(pxRem(10px),700,pxRem(16px),pxRem(0.8px),$secondary);
+        @include desktop{
+            @include font(pxRem(12px),400,pxRem(20px),pxRem(0.2px),$placeholder);
             text-transform: lowercase;
         }
     }
     &__label{
         display: none;
-        font-weight: 700;
-        font-size: 0.75rem;
-        line-height: 1rem;
-        letter-spacing: 0.6px;
+        @include font(0.75rem,700,1rem,pxRem(0.6px),$secondary);
         text-transform: uppercase;
         margin-bottom: 0.5rem;
-        color:$secondary;
-        @media only screen and (min-width: $screen-md) {
+        @include desktop{
             display: initial;
         }
     }
     &__note{
         display: none;
         padding-bottom: 2rem;
-        @media only screen and (min-width: $screen-md) {
+        @include desktop{
             display: flex;
         }
     }
-    @media only screen and (min-width: $screen-md) {
+    @include desktop {
         margin-top: 12rem;
         border: 0;
     }

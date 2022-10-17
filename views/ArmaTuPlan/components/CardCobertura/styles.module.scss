@@ -1,23 +1,24 @@
 @use "@/styles/_colors" as *;
-@use "@/styles/_sizes" as *;
+@use "@/styles/_mediaqueries" as *;
+@use "@/styles/_resources" as *;
 .card{
-    border-bottom: 1px solid $border;
+    border-bottom: pxRem(1px) solid $border;
     display: flex;
-    gap: 14px;
+    gap: pxRem(14px);
     width: 100%;
     padding: 2rem 0;
     &__description-desktop{
         display: none;
         &--open{
             display: none;
-            @media only screen and (min-width: $screen-md) {
+            @include desktop{
                     display: flex;
             }
         }
     }
     &__img{
-        width: 40px;
-        height: 40px;
+        width: pxRem(40px);
+        height: pxRem(40px);
     }
     &__text{
         font-weight: 400;
@@ -34,22 +35,19 @@
             display: flex;
             flex: 1;
             justify-content: space-between;
-            @media only screen and (min-width: $screen-md) {
+            @include desktop {
                 flex-direction: column;
                 gap: 0.75rem;
             }
         }
-        @media only screen and (min-width: $screen-md) {
+        @include desktop {
             flex-direction: row;
             align-items: flex-start;
         }
     }
     &__label{
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 1.5rem;        
-        letter-spacing: 0.2px;
-        @media only screen and (min-width: $screen-md) {
+        @include font(1rem,400,1.5rem,pxRem(0.2px),$secondary);
+        @include desktop {
             font-size: 1.25rem;
         }
     }
@@ -57,31 +55,27 @@
        display: none;
        &--open{
         display: flex;
-        @media only screen and (min-width: $screen-md) {
+        @include desktop {
             display: none;
         }
        }
     }
-    @media only screen and (min-width: $screen-md) {
+    @include desktop {
         padding: 2rem 0;
     }
 }
 .button{
     display: flex;
     justify-content: flex-start;
-    gap:11px;
+    gap:pxRem(11px);
     cursor: pointer;
     &__text{
-        font-weight: 700;
-        font-size: 10px;
-        line-height: 16px;
-        letter-spacing: 0.8px;
+        @include font(pxRem(10px),700,pxRem(16px),pxRem(0.8px),$link);
         text-transform: uppercase;
-        color:$link;
         &--open{
             color:$placeholder;
         }
-        @media only screen and (min-width: $screen-md) {
+        @include desktop{
             display: none;
         }
     }
@@ -93,7 +87,7 @@
             color:$placeholder;
             transform: rotate(180deg);
         }
-        @media only screen and (min-width: $screen-md) {
+        @include desktop {
             color:$primary;
             display: flex;
             justify-content: flex-start;

@@ -3,4 +3,9 @@
     @media only screen and (min-width: $screen-md) {
         @content
     }
+};
+@mixin desktopXl(){
+    @media only screen and (min-width:$screen-xl){
+        @content
+    }
 }

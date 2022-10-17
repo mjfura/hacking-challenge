@@ -1,5 +1,6 @@
 @use "@/styles/_colors" as *;
-@use "@/styles/_sizes" as *;
+@use "@/styles/_mediaqueries" as *;
+@use "@/styles/_resources" as *;
 .container{
     padding: 3rem 2rem;
     display: flex;
@@ -12,13 +13,13 @@
         display: flex;
         flex-direction: column;
     }
-    @media only screen and (min-width: $screen-md) {
+    @include desktop {
        flex-direction: row;
        justify-content: space-between;
        padding: 3rem 0;
        align-items: center;
        gap: 2.75rem;
-       border-bottom: 1px solid $border;
+       border-bottom: pxRem(1px) solid $border;
     }
 }
 .note{
@@ -43,10 +44,8 @@
     display: flex;
     justify-content: space-between;
     &__button{
-        display: flex;
-        justify-content: center;
+        @include center;
         cursor: pointer;
-        align-items: center;
         font-size: 1.5rem;
         width: 2rem;
         height: 2rem;

@@ -1,15 +1,11 @@
-@use "@/styles/_sizes" as *;
+@use "@/styles/_resources" as *;
 @use "@/styles/_colors" as *;
 .note{
     display: flex;
     flex-direction: column;
     &__label{
         margin-bottom: 0.75rem;
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 1.5rem;
-        letter-spacing: 0.2px;
-        color: $secondary;
+        @include font(1rem,400,1.5rem,pxRem(0.2px),$secondary);
     }
     &__list{
         margin: 0;

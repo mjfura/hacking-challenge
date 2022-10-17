@@ -1,5 +1,6 @@
 @use "@/styles/_colors" as *;
-@use "@/styles/_sizes" as *;
+@use "@/styles/_mediaqueries" as *;
+@use "@/styles/_resources" as *;
 .stepper{
     &__list{
         display: none;
@@ -7,7 +8,7 @@
         padding: 3.25rem 0 0 0;
         list-style: none;
         gap: 2.75rem;
-        @media only screen and (min-width: $screen-md) {
+        @include desktop {
             display: flex;
         }
     }
@@ -16,20 +17,14 @@
         gap:1rem;
     }
     &__label{
-        color: $placeholder;
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 1.5rem;    
-        letter-spacing: 0.2px;
+        @include font(1rem,400,1.5rem,pxRem(0.2px),$placeholder);
         &--selected{
             color: $secondary;
         }
     }
     &__number{
-        display: flex;
-        align-items: center;
+        @include center;
         color: $placeholder;
-        justify-content: center;
         text-align: center;
         font-size: 0.75rem;
         width: 1.5rem;
@@ -42,21 +37,17 @@
         }
     }
     &__mobile{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include center;
         padding: 1rem 2rem;
         gap:1rem;
-        @media only screen and (min-width: $screen-md) {
+        @include desktop {
             display: none;
         }
     }
     &__icon{
-        display: flex;
-        justify-content: center;
+        @include center;
         font-size: 2rem;
         cursor: pointer;
-        align-items: center;
         color: $border;
     }
     &__text{
@@ -74,7 +65,7 @@
         background-color: $link;
         border-radius: 1rem;
     }
-    @media only screen and (min-width: $screen-md) {
+    @include desktop {
         display: flex;
         justify-content: center;
     }

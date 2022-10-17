@@ -1,5 +1,6 @@
 @use "@/styles/_colors" as *;
-@use "@/styles/_sizes" as *;
+@use "@/styles/_mediaqueries" as *;
+@use "@/styles/_resources" as *;
 .button{
     background-color: transparent;
     display: none;
@@ -9,22 +10,15 @@
     cursor: pointer;
     gap:1rem;
     &__icon{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include center;
         font-size: 1.5rem;
         color:$primary;
     }
     &__text{
-        font-weight: 400;
-        font-size: 0.75rem;
-        line-height: 1rem;
-        letter-spacing: 0.6px;
+        @include font(0.75rem,400,1rem,pxRem(0.6px),$placeholder);
         text-transform: uppercase;
-        color:$placeholder;
-
     }
-    @media only screen and (min-width: $screen-md) {
+    @include desktop{
         display: flex;
     }
 }

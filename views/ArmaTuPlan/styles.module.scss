@@ -1,17 +1,17 @@
-@use "@/styles/_sizes" as *;
+@use "@/styles/_mediaqueries" as *;
 @use "@/styles/_colors" as *;
 .section{
     display: flex;
     flex-direction: column;
     &__stepper{
         flex: 1;
-        @media only screen and (min-width: $screen-md) {
+        @include desktop {
             background-color: $background-secondary;
         }
     }
     &__main{
         flex: 1.25;
-        @media only screen and (min-width: $screen-md) {
+        @include desktop{
             display: flex;
             flex-direction: column;
             padding: 0 3rem;
@@ -21,7 +21,7 @@
     &__footer{
         flex:1;
     }
-    @media only screen and (min-width: $screen-md) {
+    @include desktop{
             flex-direction: row;
     }
 }
