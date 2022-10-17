@@ -23,12 +23,14 @@ export default function SumaAsegurada () {
 
   return (
         <div className={styles.container} >
+          <div className={styles.container__label} >
             <p className={styles.container__text} >Indica la suma asegurada</p>
             <article className={styles.note} >
                 <p className={styles.note__text} >MIN $12,500</p>
                 <span className={styles.note__separator} ></span>
                 <p className={styles.note__text} >MAX $16,500</p>
             </article>
+          </div>
             <div className={styles['input-suma']} >
             <span className={styles['input-suma__button']} onClick={handleMinus} >-</span>
             <input className={styles['input-suma__input']} readOnly value={'$' + montoAsegurado} type="text" />

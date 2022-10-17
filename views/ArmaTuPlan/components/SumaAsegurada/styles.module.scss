@@ -1,4 +1,5 @@
 @use "@/styles/_colors" as *;
+@use "@/styles/_sizes" as *;
 .container{
     padding: 3rem 2rem;
     display: flex;
@@ -6,6 +7,18 @@
     gap:0.5rem;
     &__text{
         color:$secondary;
+    }
+    &__label{
+        display: flex;
+        flex-direction: column;
+    }
+    @media only screen and (min-width: $screen-md) {
+       flex-direction: row;
+       justify-content: space-between;
+       padding: 3rem 0;
+       align-items: center;
+       gap: 2.75rem;
+       border-bottom: 1px solid $border;
     }
 }
 .note{
@@ -24,7 +37,7 @@
     }
 }
 .input-suma{
-    padding: 0.5rem;
+    padding: 1rem;
     border-radius: 0.4rem;
     border: 0.1rem solid $border ;
     display: flex;

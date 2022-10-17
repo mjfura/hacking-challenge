@@ -1,0 +1,27 @@
+@use "@/styles/_sizes" as *;
+@use "@/styles/_colors" as *;
+.section{
+    display: flex;
+    flex-direction: column;
+    &__stepper{
+        flex: 1;
+        @media only screen and (min-width: $screen-md) {
+            background-color: $background-secondary;
+        }
+    }
+    &__main{
+        flex: 1.25;
+        @media only screen and (min-width: $screen-md) {
+            display: flex;
+            flex-direction: column;
+            padding: 0 3rem;
+            align-items: center;
+        }
+    }
+    &__footer{
+        flex:1;
+    }
+    @media only screen and (min-width: $screen-md) {
+            flex-direction: row;
+    }
+}

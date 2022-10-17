@@ -1,25 +1,12 @@
 
-import { useAppSelector } from '@/hooks'
-import { PrivateRoutes } from '@/routes'
-import { selectPlan } from '@/stateManagement/redux/slices'
-import { useRouter } from 'next/router'
-import { FormEventHandler } from 'react'
 import Coberturas from '../Coberturas'
-import Footer from '../Footer'
 import SumaAsegurada from '../SumaAsegurada'
-
+import styles from './styles.module.scss'
 export default function PlanForm () {
-  const { montoFinal } = useAppSelector(selectPlan)
-  const { push } = useRouter()
-  const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
-    e.preventDefault()
-    push(PrivateRoutes.Gracias)
-  }
   return (
-        <form onSubmit={handleSubmit} >
+        <div className={styles.plan} >
             <SumaAsegurada />
             <Coberturas/>
-            <Footer value={montoFinal} />
-        </form>
+        </div>
   )
 }

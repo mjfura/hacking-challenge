@@ -1,4 +1,5 @@
 @use "@/styles/_colors" as *;
+@use "@/styles/_sizes" as *;
 .card{
     border-bottom: 1px solid $border;
     display: flex;
@@ -17,18 +18,30 @@
             display: flex;
             flex: 1;
             justify-content: space-between;
+            @media only screen and (min-width: $screen-md) {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+        @media only screen and (min-width: $screen-md) {
+            flex-direction: row;
         }
     }
     &__label{
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;        
+        font-size: 1rem;
+        line-height: 1.5rem;        
         letter-spacing: 0.2px;
+        @media only screen and (min-width: $screen-md) {
+            font-size: 1.25rem;
+        }
     }
     &__description{
         font-size: 14px;
     }
-    
+    @media only screen and (min-width: $screen-md) {
+        padding: 2rem 0;
+    }
 }
 .button{
     display: flex;
@@ -41,9 +54,15 @@
         letter-spacing: 0.8px;
         text-transform: uppercase;
         color:$link;
+        @media only screen and (min-width: $screen-md) {
+            display: none;
+        }
     }
     &__icon{
         font-size: 1rem;
         color: $link;
+        @media only screen and (min-width: $screen-md) {
+            color:$primary;
+        }
     }
 }

@@ -1,3 +1,4 @@
+@use "@/styles/_sizes" as *;
 .coberturas{
     display: flex;
     flex-direction: column;
@@ -6,8 +7,16 @@
         margin-left: 2rem;
         font-weight: 400;
         font-size: 1.25rem;
+        @media only screen and (min-width: $screen-md) {
+            margin-top: 3rem;
+            margin-left: 0;
+            margin-bottom: 2rem;
+        }
     }
     &__list{
         padding: 0 2rem;
+        @media only screen and (min-width: $screen-md) {
+                padding: 0;
+        }
     }
 }

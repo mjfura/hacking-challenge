@@ -4,6 +4,7 @@
     &__tab{
         flex: 1;
         display: flex;
+        padding: 0 1rem 1.5rem 1rem;
         justify-content: center;
         border-bottom: solid $border;
         &--selected{
