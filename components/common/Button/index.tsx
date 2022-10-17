@@ -4,9 +4,9 @@ type Props={
     type:'button' | 'submit' | 'reset' | undefined,
     onClick?:()=>void
 }
-export default function PrimaryButton ({ label, type }:Props) {
+export default function PrimaryButton ({ label, type, onClick }:Props) {
   return (
-        <button className={styles.button} type={type}>
+        <button onClick={onClick} className={styles.button} type={type}>
             <p className={styles.button__label} >
             {label}
             </p>
