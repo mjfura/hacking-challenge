@@ -2,18 +2,17 @@
 @use "@/styles/_mediaqueries" as *;
 @use "@/styles/_resources" as *;
 .footer{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    @include grid-columns(pxRem(150px));
     padding: 1rem 2rem;
     border-top: pxRem(1px) solid $border;
     gap: 1rem;
     margin-top: pxRem(106px);
     &__container{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        @include grid-columns(pxRem(150px));
         gap: 0.25rem;
         @include desktop{
            border-bottom: pxRem(1px) solid $border;
+           @include grid-columns(pxRem(360px));
            padding-bottom: 1.25rem;
         }
     }
@@ -47,6 +46,7 @@
         }
     }
     @include desktop {
+        @include grid-columns(pxRem(360px));
         margin-top: 12rem;
         border: 0;
     }
