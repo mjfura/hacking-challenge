@@ -1,0 +1,15 @@
+@use "@/styles/_colors" as *;
+.footer{
+    padding-left: 2rem;
+    border-top: 1px solid $border;
+    &__text{
+        font-weight: 300;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        letter-spacing: 0.2px;
+        color:$placeholder;
+        display: flex;
+        align-items: center;
+        height: 75px;
+    }
+}
