@@ -1,8 +1,12 @@
 @use "@/styles/_colors" as *;
+@use "@/styles/_sizes" as *;
 .message{
     padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
+    &__button{
+        display: flex;
+    }
    &__content{
     margin-bottom: 2.5rem;
    }
@@ -24,10 +28,19 @@
         &--primary{
             color:$primary;
         }
+        @media only screen and (min-width: $screen-md) {
+         font-size: 2.25rem;
+        line-height: 3rem;    
+        letter-spacing: -0.2px;
+        }
     }
     &__article{
         display: flex;
         flex-direction: column;
         margin-bottom: 1.5rem;
+    }
+    @media only screen and (min-width: $screen-md) {
+        max-width: 480px;
+        margin-left: 8rem;
     }
 }
