@@ -1,8 +1,17 @@
 @use "@/styles/_colors" as *;
+@use "@/styles/_sizes" as *;
 .form{
     display: flex;
     flex-direction: column;
     margin: 1.5rem 0;
+    @media only screen and (min-width: $screen-md) {
+            max-width: 18rem;
+    }
+    &__error{
+        color: $primary;
+        font-size: 0.75rem;
+        font-weight: 300;
+    }
     &__container{
         margin: 24px 0 32px 0;
     }

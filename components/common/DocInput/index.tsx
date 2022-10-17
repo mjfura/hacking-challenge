@@ -21,6 +21,7 @@ export default function DocInput (props:Props) {
                 </span>
             </button>
             <Input {...props} placeholder="Nro de doc" />
+
         </div>
   )
 }

@@ -1,0 +1,15 @@
+@use "@/styles/_colors" as *;
+@use "@/styles/_sizes" as *;
+.footer{
+    display: none;
+    &__text{
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        color:$placeholder;
+    }
+        @media only screen and (min-width: $screen-md) {
+            display: flex;
+        }
+}

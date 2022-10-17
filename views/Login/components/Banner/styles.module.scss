@@ -4,20 +4,25 @@
     display: flex;
     position: relative;
     justify-content: space-between;
+    align-items: center;
     gap: 1rem;
     background-color: $background-secondary;
     padding: 1rem 0 1rem 1rem;
     &__img{
-        padding: 0;
-        margin: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
+       
+       &--md{
+        display: none;
+       }
+        @media only screen and (min-width: $screen-md){
+            display: none;
+           &--md{
+            display: flex;
+           }
+        }
     }
     @media only screen and (min-width: $screen-md) {
-        background-image: url("/assets/backgroundDesktop.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+        flex-direction: column;
+        padding: 6rem 4rem 3rem 4rem;
+        flex: 1;
     }
 }

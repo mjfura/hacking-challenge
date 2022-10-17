@@ -1,10 +1,14 @@
 @use "@/styles/_colors" as *;
+@use "@/styles/_sizes" as *;
 .button{
     background-color: $primary;
     border-radius: 8px;
     cursor: pointer;
     border: 0;
     padding: 20px 0;
+    @media only screen and (min-width: $screen-md) {
+            max-width: 12rem;
+        }
     &__label{
         font-weight: 700;
         font-size: 14px;

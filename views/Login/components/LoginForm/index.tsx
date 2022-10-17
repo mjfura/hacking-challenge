@@ -11,6 +11,7 @@ import { createUserAdapter } from '../../adapters'
 import { login } from '../../services'
 import { ILoginForm } from '../../types/forms'
 import { loginResolver } from '../../validators'
+import { MoonLoader } from 'react-spinners'
 import styles from './styles.module.scss'
 export default function LoginForm () {
   const { formState: { errors }, handleSubmit, control } = useAppForm<ILoginForm>({
@@ -49,15 +50,15 @@ export default function LoginForm () {
           <Controller control={control} name="dni" render={({ field }) => (
             <DocInput {...field} type="number"/>
           )} />
-            {errors.dni ? <p>{errors.dni.message}</p> : <></> }
+            {errors.dni ? <p className={styles.form__error} >{errors.dni.message}</p> : <></> }
             <Controller control={control} name="phone" render={({ field }) => (
               <Input {...field} placeholder='Celular' type="number"/>
             )} />
-          {errors.phone ? <p>{errors.phone.message}</p> : <></>}
+          {errors.phone ? <p className={styles.form__error} >{errors.phone.message}</p> : <></>}
           <Controller name='placa' control={control} render={({ field }) => (
             <Input {...field} placeholder='Placa' type="text" />
           )} />
-          {errors.placa ? <p>{errors.placa.message}</p> : <></>}
+          {errors.placa ? <p className={styles.form__error} >{errors.placa.message}</p> : <></>}
           </div>
           <article className={styles.form__container} >
 
@@ -69,11 +70,11 @@ export default function LoginForm () {
         } />
           )} />
 
-          {errors.terms ? <p>{errors.terms.message}</p> : <></>}
+          {errors.terms ? <p className={styles.form__error} >{errors.terms.message}</p> : <></>}
           </article>
           {
             loading
-              ? <p>Loading...</p>
+              ? <MoonLoader/>
               : <PrimaryButton label='COTÍZALO' type='submit' />
           }
         </form>
