@@ -2,6 +2,7 @@
 .section{
     display: flex;
     flex-direction: column;
+    flex: 1;
     &__banner{
         flex: 1;
     }

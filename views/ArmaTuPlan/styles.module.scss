@@ -3,6 +3,7 @@
 .section{
     display: flex;
     flex-direction: column;
+    flex: 1;
     &__stepper{
         flex: 1;
         @include desktop {
